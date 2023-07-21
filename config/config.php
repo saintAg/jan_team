@@ -1,0 +1,2 @@
+<?php
+CONST DB_NAME = 'JAN_TEAM';
