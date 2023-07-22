@@ -2,11 +2,11 @@
 
 namespace app\controllers;
 
-class IndexController
+class IndexController extends AbstractController
 {
 	public function index()
 	{
-		echo 'salute';
+		$this->view->render('index_index');
 	}
 
 }
