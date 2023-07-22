@@ -2,7 +2,7 @@
 
 namespace app\controllers;
 
-class BookingControllers
+class UserController
 {
 
 }
