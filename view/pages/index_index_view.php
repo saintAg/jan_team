@@ -1,6 +1,6 @@
 
 <h1>Hello this is index-view</h1>
-<img src="../../public/images/Logo-Booking.png" alt="booking-pic">
+<img src="/img/bg/booking.com_.webp" alt="booking-pic">
 <p>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam consequuntur cumque dic
     ta dignissimos dolorem doloremque eligendi eum ex ipsam non nulla officiis, optio quam quia quisquam sequi unde. A
@@ -9,5 +9,5 @@
     asi quibusdam ullam vero.
 </p>
 <div class="button">
-    <a href="/booking/index">go on</a>
+    <span><a href="/booking/index">Reservation</a></span>
 </div>

@@ -1,22 +1,19 @@
 <!doctype html>
 <html lang="en">
     <head>
-
         <meta charset="UTF-8">
         <meta name="viewport"
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Booking</title>
-        <link rel="stylesheet" href="../../public/css/style.css">
+        <link rel="stylesheet" href="/css/style.css">
     </head>
     <body class="body">
         <div class="l-wrapper">
             <header class="header">
                 <div class="wrapper">
-                    <div class="header__logo">
-                        <img src="" alt="">
-                    </div>
                     <div class="header__buttons">
+                        <img src="/img/baikal.png" width="100px" height="100px" alt="">
                         <?php // if($_SESSION) { ?>
                         <a href="/index/signin" class="btn"><?php echo 'Sign In';?></a>
                         <a href="/index/signup" class="btn"><?php echo 'Sign Up';?></a>
@@ -25,7 +22,8 @@
                             <a href="/index/exit" class="btn"><?php echo 'Exit';?></a>
                         <?php //} ?>
                     </div>
-                </div>
+                    </div>
+
             </header>
             <main class="main">
                 <?php include_once '../view/pages/' . $page . '_view.php'; ?>
