@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+namespace core;
 
 class View
 {
@@ -11,5 +11,11 @@ class View
         if($template != null){
             $this->template = $template;
         }
+    }
+
+    public function render ($page, array $data = [])
+    {
+        extract($data);
+        include_once '../view/templates' . $this->template . '_template.php';
     }
 }
