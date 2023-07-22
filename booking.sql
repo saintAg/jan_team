@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Час створення: Лип 20 2023 р., 23:41
+-- Час створення: Лип 22 2023 р., 10:27
 -- Версія сервера: 5.7.39
 -- Версія PHP: 8.1.9
 
@@ -30,8 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `reservations` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `date` date NOT NULL,
-  `hour` varchar(2) COLLATE utf8mb4_unicode_ci NOT NULL
+  `date` timestamp NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -56,7 +55,7 @@ CREATE TABLE `users` (
 --
 ALTER TABLE `reservations`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `date` (`date`,`hour`),
+  ADD UNIQUE KEY `date` (`date`),
   ADD KEY `user_id` (`user_id`);
 
 --
@@ -75,13 +74,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблиці `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблиці `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Обмеження зовнішнього ключа збережених таблиць
