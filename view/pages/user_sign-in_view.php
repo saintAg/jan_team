@@ -1,5 +1,5 @@
 <div class="form-box">
-    <form class="form" action="#" method="post">
+    <form class="form" action="/user/auth" method="post">
         <span class="title">Sign up</span>
         <span class="subtitle">Create a free account with your email.</span>
         <div class="form-container">

@@ -15,11 +15,11 @@
                     <div class="header__buttons">
                         <img src="/img/baikal.png" width="100px" height="100px" alt="">
                         <?php // if($_SESSION) { ?>
-                        <a href="/index/signin" class="btn"><?php echo 'Sign In';?></a>
-                        <a href="/index/signup" class="btn"><?php echo 'Sign Up';?></a>
+                        <a href="/user/index" class="btn"><?php echo 'Sign In';?></a>
+                        <a href="/user/registration" class="btn"><?php echo 'Sign Up';?></a>
                         <?php //} else{ ?>
                         <span class="btn"><?php echo 'Hello User';?></span>
-                            <a href="/index/exit" class="btn"><?php echo 'Exit';?></a>
+                            <a href="/user/exit" class="btn"><?php echo 'Exit';?></a>
                         <?php //} ?>
                     </div>
                     </div>
