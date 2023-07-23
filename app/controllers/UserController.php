@@ -24,4 +24,9 @@ class UserController extends AbstractController
 	{
 		$this->view->render('user_sign-up');
 	}
+
+    public function auth()
+    {
+        $this->model->find('Test@gmail.com');
+    }
 }

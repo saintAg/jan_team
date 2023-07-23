@@ -6,9 +6,9 @@
             <input type="email" class="input" name="email" placeholder="Email">
             <input type="password" class="input" name="password" placeholder="Password">
         </div>
-        <button>Sign up</button>
+        <button type="submit">Sign up</button>
     </form>
     <div class="form-section">
-        <p>Have an account? <a href="">Log in</a> </p>
+        <p>Have an account? <a href="/user/index">Log in</a> </p>
     </div>
 </div>
