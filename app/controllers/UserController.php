@@ -41,4 +41,21 @@ class UserController extends AbstractController
 		}
 	    Route::redirect('/user/index');
     }
+
+    public function create ()
+    {
+        $email = filter_input(INPUT_POST, 'email');
+        $user = $this->model->find($email);
+        if (!$user) {
+            $pass = filter_input(INPUT_POST, 'password');
+            $passConf = filter_input(INPUT_POST, 'password_conf');
+            if ($pass == $passConf){
+                $user['email'] = $email;
+                $user['pass'] = password_hash($pass);
+                $this->model->add($user);
+            }
+        }
+
+        Route::redirect('/index/index');
+    }
 }
