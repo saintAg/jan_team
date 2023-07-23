@@ -3,8 +3,8 @@
         <span class="title">Sign up</span>
         <span class="subtitle">Create a free account with your email.</span>
         <div class="form-container">
-            <input type="email" class="input" placeholder="Email">
-            <input type="password" class="input" placeholder="Password">
+            <input type="email" class="input" name="email" placeholder="Email">
+            <input type="password" class="input" name="password" placeholder="Password">
         </div>
         <button>Sign up</button>
     </form>
