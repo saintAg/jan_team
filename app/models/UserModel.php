@@ -15,7 +15,7 @@ class UserModel
         }
     }
 
-    public function find($email) : array
+    public function find($email) : ?array
     {
         $query = "SELECT * FROM (users) WHERE (email) = '$email'";
 

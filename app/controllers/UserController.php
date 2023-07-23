@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\UserModel;
+use app\core\Route;
 
 class UserController extends AbstractController
 {
@@ -27,6 +28,17 @@ class UserController extends AbstractController
 
     public function auth()
     {
-        $this->model->find('Test@gmail.com');
+		$email = filter_input(INPUT_POST, 'email');
+		$password = filter_input(INPUT_POST, 'password');
+
+        $user = $this->model->find($email);
+
+		if($user && password_hash($password, PASSWORD_DEFAULT) == $user['password']){
+			session_start();
+			$_SESSION['user'] = $user;
+			//$this->Session->add();
+			Route::redirect('/index/index');
+		}
+	    Route::redirect('/user/index');
     }
 }
