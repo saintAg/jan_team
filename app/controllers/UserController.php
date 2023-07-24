@@ -42,10 +42,11 @@ class UserController extends AbstractController
 
         $user = $this->model->find($email);
 
-		if($user && password_hash($password, PASSWORD_DEFAULT) == $user['password']){
+		if($user && password_verify($password,$user['password'])){
 			session_start();
 			$_SESSION['user'] = $user;
 			//$this->Session->add();
+
 			Route::redirect('/index/index');
 		}
 	    Route::redirect('/user/index');
