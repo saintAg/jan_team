@@ -7,8 +7,14 @@ use app\core\Route;
 
 class UserController extends AbstractController
 {
+    /**
+     * @var UserModel
+     */
 	private UserModel $model;
 
+    /**
+     *
+     */
 	public function __construct()
 	{
 		parent::__construct();
@@ -16,6 +22,9 @@ class UserController extends AbstractController
 		$this->model = new UserModel();
 	}
 
+    /**
+     * @return void
+     */
 	public function index(): void //singIn
 	{
 		$this->view->render('user_sign-in');
@@ -47,15 +56,16 @@ class UserController extends AbstractController
         $email = filter_input(INPUT_POST, 'email');
         $user = $this->model->find($email);
         if (!$user) {
+        $login = filter_input(INPUT_POST,'login');
             $pass = filter_input(INPUT_POST, 'password');
             $passConf = filter_input(INPUT_POST, 'password_conf');
             if ($pass == $passConf){
+                $user['login'] = $login;
                 $user['email'] = $email;
-                $user['pass'] = password_hash($pass);
+                $user['password'] = password_hash($pass,PASSWORD_DEFAULT);
                 $this->model->add($user);
             }
         }
-
         Route::redirect('/index/index');
     }
 }

@@ -4,6 +4,10 @@ namespace app\core;
 
 class Route
 {
+    /**
+     * @return void
+     * builds the correct path in the url
+     */
 	static public function init(): void
 	{
 		$controllerName = 'index';
@@ -41,20 +45,36 @@ class Route
 		self::call($controller, $actionName);
 	}
 
+    /**
+     * @param $url
+     * @return void
+     * forwarding to the specified address
+     */
 	static public function redirect($url): void
 	{
 		header('Location: ' . $url);
 		exit();
 	}
 
+    /**
+     * @return void
+     * page status
+     */
 	static public function notFound(): void
 	{
 		http_response_code(404);
 		exit();
 	}
 
+    /**
+     * @param controllerable $controller
+     * @param $action
+     * @return void
+     * call method $action in $controller;
+     */
 	static private function call(controllerable $controller, $action): void
 	{
 		$controller->$action();
 	}
+
 }
