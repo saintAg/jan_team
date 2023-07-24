@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace app\models;
 
 class BookingModel
 {
@@ -33,5 +33,12 @@ class BookingModel
         if(!$result){
             exit($this->db->error);
         }
+    }
+    public function add($time)
+    {
+        $query = "INSERT INTO reservation (data) VALUES (FROM_UNIXTIME('$time[time]'))";
+        $result = $this->db->query($query);
+        $this->checkResult($result);
+
     }
 }
