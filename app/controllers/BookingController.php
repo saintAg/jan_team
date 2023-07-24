@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\models\BookingModel;
+
 class BookingController extends AbstractController
 {
     /**

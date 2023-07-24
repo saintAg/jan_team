@@ -1,6 +1,6 @@
 <?php
 
-namespace models;
+namespace app\models;
 
 class BookingModel
 {
@@ -21,11 +21,17 @@ class BookingModel
      */
     public function find() : ?array
     {
-        $query = "SELECT * FROM reservations;";
+        $query = "SELECT (date) FROM reservations;";
         $result = $this->db->query($query);
         $this->checkResult($result);
 
         return $result->fetch_assoc();
     }
 
+    public function checkResult($result) : void
+    {
+        if(!$result){
+            exit($this->db->error);
+        }
+    }
 }
