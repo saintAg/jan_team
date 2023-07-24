@@ -28,4 +28,14 @@ class BookingController extends AbstractController
         }
     }
 
+    public function reserve ()
+    {
+        $reserve = [];
+        $reserve = filter_input(INPUT_POST, 'time');
+        foreach ($reserve as $time)
+        {
+            $this->model->add($time);
+        }
+        Route::redirect('');
+    }
 }
