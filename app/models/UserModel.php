@@ -2,19 +2,8 @@
 
 namespace app\models;
 
-class UserModel
+class UserModel extends AbstractModel
 {
-    protected \mysqli $db;
-
-    public function __construct()
-    {
-        $this->db = new \mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-        if($this->db->connect_errno != 0){
-            exit($this->db->connect_error);
-        }
-    }
-
     /**
      * @param $email
      * @return array|null
@@ -28,18 +17,6 @@ class UserModel
         $this->checkResult($result);
 
         return $result->fetch_assoc();
-    }
-
-    /**
-     * @param $result
-     * @return void
-     * eroor bd
-     */
-    public function checkResult($result) : void
-    {
-        if(!$result){
-            exit($this->db->error);
-        }
     }
 
     /**
