@@ -31,11 +31,15 @@ class BookingController extends AbstractController
     public function reserve ()
     {
         $reserve = [];
-        $reserve = filter_input(INPUT_POST, 'time');
-        foreach ($reserve as $time)
-        {
-            $this->model->add($time);
-        }
-        Route::redirect('');
+        $reserveTime = filter_input(INPUT_POST, 'time');
+    $reserveDate = filter_input(INPUT_POST, 'date');
+        session_start();
+        $userId = $_SESSION['user']['id'];
+        $this->model->add($reserveTime,$reserveDate,$userId);
+
+        $this->view->render('booking_success');
     }
+//    public function success(){
+//        $this->view->render('booking/success');
+//    }
 }

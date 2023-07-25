@@ -6,6 +6,7 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Booking</title>
+        <link rel="icon" href="/img/baikal.png">
         <link rel="stylesheet" href="/css/style.css">
     </head>
     <body class="body">
@@ -14,13 +15,17 @@
                 <div class="wrapper">
                     <div class="header__buttons">
                         <img src="/img/baikal.png" width="100px" height="100px" alt="">
-                        <?php  if(!$_SESSION['user']) { ?>
+<!--                        --><?php // if(!$_SESSION['user']) { ?>
                         <a href="/user/index" class="btn"><?php echo 'Sign In';?></a>
                         <a href="/user/registration" class="btn"><?php echo 'Sign Up';?></a>
-                        <?php } else{ ?>
-                        <span class="btn"><?php echo 'Hello User';?></span>
+<!--                        --><?php //} else{ ?>
+                        <div class="header_user_exit">
+                        <span class="btn"><?= 'Hello User';?></span>
+                            <img src="/img/bg/hellouser.png" alt="hello user">
                             <a href="/user/exit" class="btn"><?php echo 'Exit';?></a>
-                        <?php } ?>
+                        </div>
+<!--                        --><?php //} ?>
+
                     </div>
                     </div>
 
@@ -36,12 +41,14 @@
                         </div>
                         <address class="footer__address">
                             <ul>
-                                <li>Name Surname</li>
-                                <li>Name Surname</li>
-                                <li>Name Surname</li>
-                                <li>Name Surname</li>
-                                <li>Name Surname</li>
-                                <li>Name Surname</li>
+                                <?php echo 'Сайт створили:';?>
+                                <li>Вороблевський Микола</li>
+                                <li>Мічкірє Андрій</li>
+                                <li>Шегеда Денис </li>
+                                <li>Хименко Вячеслав</li>
+                                <li>Богданов Владислав</li>
+                                <li>Троцюк Андрій</li>
+                                <li>Тильний Віталій</li>
                             </ul>
                         </address>
                     </div>
@@ -50,7 +57,7 @@
                             <?php echo '© 2023, Level Up jan-2023';?>
                         </div>
                         <div class="footer__created">
-                            <?php echo 'Сайт створили: Mi4kire and Co';?>
+
                         </div>
                     </div>
                 </div>

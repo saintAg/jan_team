@@ -34,9 +34,12 @@ class BookingModel
             exit($this->db->error);
         }
     }
-    public function add($time)
+    public function add($time,$date,$userId)
     {
-        $query = "INSERT INTO reservation (data) VALUES (FROM_UNIXTIME('$time[time]'))";
+        $reserve = $date .' '. $time;
+        $timeStamp = strtotime($reserve);
+        $date = date('Y-m-d H:i:s', $timeStamp);
+        $query = "INSERT INTO reservations (user_id, date) VALUES ('$userId','$date')";
         $result = $this->db->query($query);
         $this->checkResult($result);
 

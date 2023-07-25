@@ -1,6 +1,6 @@
 <div class="form-container_cal">
     <h2>Сalendar time and date</h2>
-    <form>
+    <form action="/booking/reserve" method="post">
         <div class="form-group">
             <label for="date">data:</label>
             <input type="date" id="date" name="date">
