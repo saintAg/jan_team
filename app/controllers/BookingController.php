@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\core\Route;
 use app\models\BookingModel;
+use app\core\TemporaryStorage;
 
 class BookingController extends AbstractController
 {
@@ -18,28 +19,27 @@ class BookingController extends AbstractController
         $this->model = new BookingModel();
     }
 
-    public function index()
+    public function index(): void
     {
-        session_start();
-        if($_SESSION['user']){
-            $this->view->render('booking_index');
+	    $user = TemporaryStorage::check();
+        if($user){
+            $this->view->render('booking_index', [
+				'user' => $user,
+            ]);
         }else{
             $this->view->render('index_index');
         }
     }
 
-    public function reserve ()
+    public function reserve (): void
     {
-        $reserve = [];
         $reserveTime = filter_input(INPUT_POST, 'time');
-    $reserveDate = filter_input(INPUT_POST, 'date');
-        session_start();
-        $userId = $_SESSION['user']['id'];
-        $this->model->add($reserveTime,$reserveDate,$userId);
+        $reserveDate = filter_input(INPUT_POST, 'date');
 
-        $this->view->render('booking_success');
+        $user = TemporaryStorage::check();
+
+        $this->model->add($reserveTime,$reserveDate,$user['id']);
+
+        $this->view->render('booking_success', ['user' => $user]);
     }
-//    public function success(){
-//        $this->view->render('booking/success');
-//    }
 }

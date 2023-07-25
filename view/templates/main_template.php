@@ -15,16 +15,16 @@
                 <div class="wrapper">
                     <div class="header__buttons">
                         <img src="/img/baikal.png" width="100px" height="100px" alt="">
-<!--                        --><?php // if(!$_SESSION['user']) { ?>
+                        <?php  if(!$user) { ?>
                         <a href="/user/index" class="btn"><?php echo 'Sign In';?></a>
                         <a href="/user/registration" class="btn"><?php echo 'Sign Up';?></a>
-<!--                        --><?php //} else{ ?>
+                        <?php } else{ ?>
                         <div class="header_user_exit">
-                        <span class="btn"><?= 'Hello User';?></span>
+                        <span class="btn"><?= 'Hello'. ' ' . $user['login'];?></span>
                             <img src="/img/bg/hellouser.png" alt="hello user">
                             <a href="/user/exit" class="btn"><?php echo 'Exit';?></a>
                         </div>
-<!--                        --><?php //} ?>
+                        <?php } ?>
 
                     </div>
                     </div>

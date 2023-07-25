@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\core\TemporaryStorage;
 use app\models\UserModel;
 use app\core\Route;
 
@@ -25,17 +26,19 @@ class UserController extends AbstractController
     /**
      * @return void
      */
-	public function index(): void //singIn
+	public function index(): void
 	{
-		$this->view->render('user_sign-in');
+		$user = TemporaryStorage::check();
+		$this->view->render('user_sign-in', ['user' => $user]);
 	}
 
 	public function registration(): void
 	{
-		$this->view->render('user_sign-up');
+		$user = TemporaryStorage::check();
+		$this->view->render('user_sign-up', ['user' => $user]);
 	}
 
-    public function auth()
+    public function auth(): void
     {
 		$email = filter_input(INPUT_POST, 'email');
 		$password = filter_input(INPUT_POST, 'password');
@@ -43,16 +46,14 @@ class UserController extends AbstractController
         $user = $this->model->find($email);
 
 		if($user && password_verify($password,$user['password'])){
-			session_start();
-			$_SESSION['user'] = $user;
-			//$this->Session->add();
+			TemporaryStorage::add($user);
 
 			Route::redirect('/index/index');
 		}
 	    Route::redirect('/user/index');
     }
 
-    public function create ()
+    public function create(): void
     {
         $email = filter_input(INPUT_POST, 'email');
         $user = $this->model->find($email);
@@ -69,4 +70,10 @@ class UserController extends AbstractController
         }
         Route::redirect('/index/index');
     }
+
+	public function exit(): void
+	{
+		TemporaryStorage::dell();
+		Route::redirect('/index/index');
+	}
 }
