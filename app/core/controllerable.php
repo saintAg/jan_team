@@ -2,7 +2,7 @@
 
 namespace app\core;
 
-interface Controllerable
+interface controllerable
 {
     /**
      * @return mixed

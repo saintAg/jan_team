@@ -2,6 +2,8 @@
 
 namespace app\controllers;
 
+use app\core\TemporaryStorage;
+
 class IndexController extends AbstractController
 {
     /**
@@ -10,7 +12,7 @@ class IndexController extends AbstractController
      */
 	public function index(): void
 	{
-		$this->view->render('index_index');
+		$user = TemporaryStorage::check();
+		$this->view->render('index_index', ['user' => $user]);
 	}
-
 }

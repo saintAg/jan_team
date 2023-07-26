@@ -2,20 +2,9 @@
 
 namespace app\models;
 
-class BookingModel
+class BookingModel extends AbstractModel
 {
-    protected \mysqli $db;
-
-    public function __construct()
-    {
-        $this->db = new \mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-
-        if($this->db->connect_errno != 0){
-            exit($this->db->connect_error);
-        }
-    }
-
-    /**
+     /**
      * @return array|null
      * retrieves all reservations from a table
      */
@@ -28,12 +17,6 @@ class BookingModel
         return $result->fetch_assoc();
     }
 
-    public function checkResult($result) : void
-    {
-        if(!$result){
-            exit($this->db->error);
-        }
-    }
     public function add($time,$date,$userId)
     {
         $reserve = $date .' '. $time;

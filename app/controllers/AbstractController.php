@@ -2,10 +2,10 @@
 
 namespace app\controllers;
 
-use app\core\Controllerable;
+use app\core\controllerable;
 use app\core\View;
 
-abstract class AbstractController implements Controllerable
+abstract class AbstractController implements controllerable
 {
     /**
      * @var View
