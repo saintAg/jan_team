@@ -14,15 +14,15 @@
             <header class="header">
                 <div class="wrapper">
                     <div class="header__buttons">
-                        <img src="/img/baikal.png" width="100px" height="100px" alt="">
+                        <a class="logo" href="index/index"><img src="/img/baikal.png" width="100px" height="100px" alt=""></a>
                         <?php  if(!$user) { ?>
                         <a href="/user/index" class="btn"><?php echo 'Sign In';?></a>
                         <a href="/user/registration" class="btn"><?php echo 'Sign Up';?></a>
                         <?php } else{ ?>
                         <div class="header_user_exit">
-                        <span class="btn"><?= 'Hello'. ' ' . $user['login'];?></span>
+                        <span class="btn"><?= 'hello'. ' ' . $user['login'];?></span>
                             <img src="/img/bg/hellouser.png" alt="hello user">
-                            <a href="/user/exit" class="btn"><?php echo 'Exit';?></a>
+                            <a href="/user/exit" class="btn"><?php echo 'exit';?></a>
                         </div>
                         <?php } ?>
 
@@ -39,25 +39,12 @@
                         <div class="footer__logo">
                             <img src="" alt="">
                         </div>
-                        <address class="footer__address">
-                            <ul>
-                                <?php echo 'Сайт створили:';?>
-                                <li>Вороблевський Микола</li>
-                                <li>Мічкірє Андрій</li>
-                                <li>Шегеда Денис </li>
-                                <li>Хименко Вячеслав</li>
-                                <li>Богданов Владислав</li>
-                                <li>Троцюк Андрій</li>
-                                <li>Тильний Віталій</li>
-                            </ul>
-                        </address>
                     </div>
                     <div class="footer-bottom">
                         <div class="footer__copyright">
                             <?php echo '© 2023, Level Up jan-2023';?>
                         </div>
                         <div class="footer__created">
-
                         </div>
                     </div>
                 </div>
