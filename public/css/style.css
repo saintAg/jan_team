@@ -40,9 +40,12 @@ html,body{
     /*clip-path:polygon(0 10%, 100% 0, 100% 92%, 0 100%);*/
 
 }
-.header__buttons>img{
+.header__buttons>a>img{
     width: 50px;
     height: 50px;
+}
+.header__buttons>.logo{
+        margin-top: -2px;
 }
 .header__buttons>a,span{
     margin-top: 15px;

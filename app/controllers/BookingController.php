@@ -22,7 +22,8 @@ class BookingController extends AbstractController
     {
         session_start();
         if($_SESSION['user']){
-            $this->view->render('booking_index');
+            $key = 1;
+            $this->view->render('booking_index',['key' => $key]);
         }else{
             $this->view->render('index_index');
         }

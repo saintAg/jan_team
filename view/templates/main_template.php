@@ -14,17 +14,18 @@
             <header class="header">
                 <div class="wrapper">
                     <div class="header__buttons">
-                        <img src="/img/baikal.png" width="100px" height="100px" alt="">
-<!--                        --><?php // if(!$_SESSION['user']) { ?>
+                        <a class="logo" href="/index/index"><img src="/img/baikal.png" width="100px" height="100px" alt=""></a>
+                        <?php session_start();
+                        if(!$_SESSION['user']) { ?>
                         <a href="/user/index" class="btn"><?php echo 'Sign In';?></a>
                         <a href="/user/registration" class="btn"><?php echo 'Sign Up';?></a>
-<!--                        --><?php //} else{ ?>
+                        <?php } else{ ?>
                         <div class="header_user_exit">
                         <span class="btn"><?= 'Hello User';?></span>
                             <img src="/img/bg/hellouser.png" alt="hello user">
                             <a href="/user/exit" class="btn"><?php echo 'Exit';?></a>
                         </div>
-<!--                        --><?php //} ?>
+                        <?php } ?>
 
                     </div>
                     </div>
