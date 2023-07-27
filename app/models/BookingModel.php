@@ -8,9 +8,9 @@ class BookingModel extends AbstractModel
      * @return array|null
      * retrieves all reservations from a table
      */
-    public function find() : ?array
+    public function find($date) : ?array
     {
-        $query = "SELECT (date) FROM reservations;";
+        $query = "SELECT (date) FROM reservations where (date) like '$date' '.' '%'";
         $result = $this->db->query($query);
         $this->checkResult($result);
 

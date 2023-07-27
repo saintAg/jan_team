@@ -16,7 +16,7 @@ class Route
 		$urlPart = substr($_SERVER['REQUEST_URI'], 1);
 		$urlComponents = explode('/',$urlPart);
 
-		if (count($urlComponents) > 2) {
+		if (count($urlComponents) > 3) {
 			$urlComponents = array_slice($urlComponents, 0, 2);
 			$redirectUrl = '/' . implode('/', $urlComponents);
 			self::redirect($redirectUrl);

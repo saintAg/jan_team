@@ -21,10 +21,17 @@ class BookingController extends AbstractController
 
     public function index(): void
     {
+        $date = filter_input(INPUT_GET,'date');
+        if(empty($date)){
+            $date = date("Y-m-d");
+        }
+        $key = $this->model->find($date);
+        var_dump($key);
 	    $user = TemporaryStorage::check();
         if($user){
             $this->view->render('booking_index', [
 				'user' => $user,
+                'date' => $date,
             ]);
         }else{
             $this->view->render('index_index');
