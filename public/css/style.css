@@ -8,7 +8,7 @@ html,body{
 .l-wrapper{
     min-height: 100%;
     max-width: 1500px;
-    margin: 0 100px 0 100px;
+    margin: auto;
     display: flex;
     flex-direction: column;
 }
