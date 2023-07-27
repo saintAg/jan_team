@@ -10,11 +10,11 @@ class BookingModel extends AbstractModel
      */
     public function find($date) : ?array
     {
-        $query = "SELECT (date) FROM reservations where (date) like '$date' '.' '%'";
+        $query = "SELECT (date) FROM reservations where (date) like '$date' '%'";
         $result = $this->db->query($query);
         $this->checkResult($result);
 
-        return $result->fetch_assoc();
+        return $result->fetch_all();
     }
 
     public function add($time,$date,$userId)

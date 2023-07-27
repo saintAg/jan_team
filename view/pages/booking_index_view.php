@@ -3,7 +3,7 @@
     <form action="/booking/index/" method="get">
         <div class="form-group">
             <label for="date">data:</label>
-            <input type="date" id="date" name="date">
+            <input type="date" value="<?= $date ?>" id="date" name="date">
         </div>
         <div class="form-group">
             <input type="submit" value="Show hours">
@@ -11,5 +11,10 @@
     </form>
 </div>
 <div class="">
- <?php  echo $date; ?>
+    <?php for($i=0; $i < 24; $i++){?>
+        <label>
+            <?= $i ?>
+            <input type="checkbox">
+        </label>
+    <?php } ?>
 </div>
