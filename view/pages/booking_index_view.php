@@ -14,7 +14,11 @@
     <?php for($i=0; $i < 24; $i++){?>
         <label>
             <?= $i ?>
+            <?php if (in_array($i, $hours)) :?>
+            <input type="checkbox" disabled>
+            <?php else :?>
             <input type="checkbox">
+            <?php endif ?>
         </label>
     <?php } ?>
 </div>

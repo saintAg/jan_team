@@ -25,13 +25,18 @@ class BookingController extends AbstractController
         if(empty($date)){
             $date = date("Y-m-d");
         }
-        $key = $this->model->find($date);
-        var_dump($key);
+        $dates = $this->model->find($date);
+		$hours = [];
+        foreach ($dates as $value){
+			$hour = substr($value[0], 11, 2);
+			$hours[] = (int)$hour;
+        }
 	    $user = TemporaryStorage::check();
         if($user){
             $this->view->render('booking_index', [
 				'user' => $user,
                 'date' => $date,
+	            'hours' => $hours,
             ]);
         }else{
             $this->view->render('index_index');
