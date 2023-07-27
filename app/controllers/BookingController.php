@@ -39,7 +39,11 @@ class BookingController extends AbstractController
 	            'hours' => $hours,
             ]);
         }else{
-            $this->view->render('index_index');
+            $this->view->render('booking_index', [
+            'user' => $user,
+                'date' => $date,
+	            'hours' => $hours,
+            ]);
         }
     }
 
