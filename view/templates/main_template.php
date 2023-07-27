@@ -14,7 +14,7 @@
             <header class="header">
                 <div class="wrapper">
                     <div class="header__buttons">
-                        <a class="logo" href="index/index"><img src="/img/baikal.png" width="100px" height="100px" alt=""></a>
+                        <a class="logo" href="/index/index"><img src="/img/baikal.png" width="100px" height="100px" alt=""></a>
                         <?php  if(!$user) { ?>
                         <a href="/user/index" class="btn"><?php echo 'Sign In';?></a>
                         <a href="/user/registration" class="btn"><?php echo 'Sign Up';?></a>
