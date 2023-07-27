@@ -32,29 +32,30 @@ class BookingController extends AbstractController
 			$hours[] = (int)$hour;
         }
 	    $user = TemporaryStorage::check();
-        if($user){
-            $this->view->render('booking_index', [
-				'user' => $user,
-                'date' => $date,
-	            'hours' => $hours,
+        $this->view->render('booking_index', [
+			'user' => $user,
+	        'date' => $date,
+	        'hours' => $hours,
             ]);
-        }else{
-            $this->view->render('booking_index', [
-            'user' => $user,
-                'date' => $date,
-	            'hours' => $hours,
-            ]);
-        }
     }
 
     public function reserve (): void
     {
-        $reserveTime = filter_input(INPUT_POST, 'time');
+		$hours = [];
+		$keys = array_keys($_POST);
+		foreach ($keys as $key){
+			if(is_int($key)){
+				$hours[] = $key;
+			}
+		}
+
         $reserveDate = filter_input(INPUT_POST, 'date');
 
         $user = TemporaryStorage::check();
 
-        $this->model->add($reserveTime,$reserveDate,$user['id']);
+	    foreach ($hours as $reserveTime) {
+		    $this->model->add($reserveTime, $reserveDate, $user['id']);
+	    }
 
         $this->view->render('booking_success', ['user' => $user]);
     }

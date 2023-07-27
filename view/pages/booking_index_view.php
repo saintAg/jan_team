@@ -23,7 +23,11 @@
                 <?php endif ?>
             </label>
         <?php } ?>
-        <input type="submit" value="reserve">
+        <?php if($user) :?>
+            <input type="submit" value="reserve">
+        <?php else :?>
+            <button><a href="/user/index">Log in</a></button>
+        <?php endif; ?>
     </form>
 
 </div>

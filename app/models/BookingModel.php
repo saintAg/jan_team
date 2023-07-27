@@ -19,12 +19,11 @@ class BookingModel extends AbstractModel
 
     public function add($time,$date,$userId)
     {
-        $reserve = $date .' '. $time;
+        $reserve = $date .' '. $time . ':00:00';
         $timeStamp = strtotime($reserve);
         $date = date('Y-m-d H:i:s', $timeStamp);
         $query = "INSERT INTO reservations (user_id, date) VALUES ('$userId','$date')";
         $result = $this->db->query($query);
         $this->checkResult($result);
-
     }
 }
