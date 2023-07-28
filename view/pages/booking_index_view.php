@@ -15,21 +15,21 @@
         <?php for($i=0; $i < 24; $i++) :?>
 	            <?php if(!$user) :?>
 		            <?php if (in_array($i, $hours)) :?>
-                        <lable class="no-user"><?= $i ?>
+                        <lable class="no-user"><?= $i.':00' ?>
                             <input type="checkbox" disabled>
                         </lable>
 		            <?php else :?>
-                        <lable><?= $i ?>
+                        <lable><?= $i.':00' ?>
                             <input type="checkbox" disabled>
                         </lable>
 		            <?php endif ?>
 	            <?php else :?>
                 <?php if (in_array($i, $hours)) :?>
-                    <lable class="no-user"><?= $i ?>
+                    <lable class="no-user"><?= $i.':00' ?>
                         <input type="checkbox" disabled>
                     </lable>
                 <?php else :?>
-                    <lable><?= $i ?>
+                    <lable><?= $i.':00' ?>
                         <input type="checkbox" name="<?= $i ?>" value= "<?= $i ?>">
                     </lable>
                     <input type="hidden" name="date" value="<?= $date ?>">
