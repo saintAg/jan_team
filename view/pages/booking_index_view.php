@@ -12,30 +12,34 @@
 </div>
 <div class="">
     <form action="/booking/reserve" method="post" >
-        <label>
         <?php for($i=0; $i < 24; $i++) :?>
-                <?= $i ?>
 	            <?php if(!$user) :?>
 		            <?php if (in_array($i, $hours)) :?>
-                        <input type="checkbox" disabled class="no-user">
+                        <lable class="no-user"><?= $i ?>
+                            <input type="checkbox" disabled>
+                        </lable>
 		            <?php else :?>
-                        <input type="checkbox" disabled>
+                        <lable><?= $i ?>
+                            <input type="checkbox" disabled>
+                        </lable>
 		            <?php endif ?>
 	            <?php else :?>
                 <?php if (in_array($i, $hours)) :?>
-                    <input type="checkbox" disabled class="no-user">
+                    <lable class="no-user"><?= $i ?>
+                        <input type="checkbox" disabled>
+                    </lable>
                 <?php else :?>
-                    <input type="checkbox" name="<?= $i ?>" value= "<?= $i ?>">
+                    <lable><?= $i ?>
+                        <input type="checkbox" name="<?= $i ?>" value= "<?= $i ?>">
+                    </lable>
                     <input type="hidden" name="date" value="<?= $date ?>">
                 <?php endif ?>
 	            <?php endif ?>
         <?php endfor; ?>
-        </label>
         <?php if($user) :?>
             <input type="submit" value="reserve">
         <?php else :?>
             <button><a href="/user/index">Log in</a></button>
         <?php endif; ?>
     </form>
-
 </div>
