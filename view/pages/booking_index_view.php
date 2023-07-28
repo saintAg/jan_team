@@ -10,7 +10,7 @@
         </div>
     </form>
 </div>
-<div class="">
+<div>
     <form action="/booking/reserve" method="post" >
         <?php for($i=0; $i < 24; $i++) :?>
 	            <?php if(!$user) :?>
@@ -37,7 +37,7 @@
 	            <?php endif ?>
         <?php endfor; ?>
         <?php if($user) :?>
-            <input type="submit" value="reserve">
+            <input class="sub-reserve" type="submit" value="reserve">
         <?php else :?>
             <button><a href="/user/index">Log in</a></button>
         <?php endif; ?>

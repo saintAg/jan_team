@@ -22,15 +22,13 @@
                         </div>
                         <?php } else{ ?>
                         <div class="header_user_exit">
-                        <span class="btn"><?= 'hello'. ' ' . $user['login'];?></span>
+                        <span class="btn"><b>Hello, </b><?= $user['login'];?></span>
                             <img src="/img/bg/hellouser.png" alt="hello user">
-                            <a href="/user/exit" class="btn"><?php echo 'exit';?></a>
+                            <a href="/user/exit" class="btn">exit</a>
                         </div>
                         <?php } ?>
-
                     </div>
                     </div>
-
             </header>
             <main class="main">
                 <?php include_once '../view/pages/' . $page . '_view.php'; ?>

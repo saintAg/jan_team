@@ -68,6 +68,10 @@ class BookingController extends AbstractController
 		    $this->model->add($reserveTime, $reserveDate, $user['id']);
 	    }
 
-        $this->view->render('booking_success', ['user' => $user]);
+        $this->view->render('booking_success', [
+            'user' => $user,
+            'time' => $reserveTime,
+            'date' => $reserveDate
+        ]);
     }
 }

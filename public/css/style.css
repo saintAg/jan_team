@@ -233,5 +233,40 @@ ul li{
 .no-user{
     color: red;
 }
-
-
+.sub-reserve{
+    font-size: 18px;
+    border-radius: 25px;
+    color: #0066ff;
+    background-color: navajowhite;
+    height: 40px;
+    margin-top: 50px;
+    font-weight: bold;
+    width: 110px;
+}
+h4{
+    margin: 25px 0 15px 0;
+}
+.header_user_exit>span>b{
+    font-size: 24px;
+    font-weight: 400;
+}
+.success_img{
+    width: 200px;
+    height: 200px;
+}
+.btn:nth-child(3){
+    padding: 3px;
+    background-color: rgba(175,25,15,0.83);
+    border: 1px solid black;
+}
+.btn:nth-child(3):hover{
+    border: 1px solid black;
+    background-color: #af0400;
+    color: yellow;
+}
+.wrapperThank>h1{
+    color: lightsalmon;
+}
+h4{
+    font-style: oblique;
+}
