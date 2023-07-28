@@ -217,3 +217,8 @@ ul li{
     list-style: none;
 }
 
+.no-user{
+    outline:1px solid red;
+}
+
+
