@@ -11,6 +11,6 @@
         <button>Sign up</button>
     </form>
     <div class="form-section">
-        <p>Have an account? <a href="/user/index">Log in</a></p>
+        <p>Have an account? <a href="/user/index">Sign In</a></p>
     </div>
 </div>

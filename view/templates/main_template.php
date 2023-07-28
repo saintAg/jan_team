@@ -16,8 +16,10 @@
                     <div class="header__buttons">
                         <a class="logo" href="/index/index"><img src="/img/baikal.png" width="100px" height="100px" alt=""></a>
                         <?php  if(!$user) { ?>
-                        <a href="/user/index" class="btn"><?php echo 'Sign In';?></a>
-                        <a href="/user/registration" class="btn"><?php echo 'Sign Up';?></a>
+                        <div class="header__links">
+                            <a href="/user/index" class="btn">Sign In</a>
+                            <a href="/user/registration" class="btn">Sign Up</a>
+                        </div>
                         <?php } else{ ?>
                         <div class="header_user_exit">
                         <span class="btn"><?= 'hello'. ' ' . $user['login'];?></span>

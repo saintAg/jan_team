@@ -9,6 +9,6 @@
         <button type="submit">Sign in</button>
     </form>
     <div class="form-section">
-        <p>Havnt yet an account? <a href="/user/registration">Log in</a> </p>
+        <p>Havnt yet an account? <a href="/user/registration">Sign Up</a> </p>
     </div>
 </div>
