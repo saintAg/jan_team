@@ -17,6 +17,11 @@ class BookingModel extends AbstractModel
         return $result->fetch_all();
     }
 
+    /**
+     * @return void
+     * adds a booking record to the database
+     */
+
     public function add($time,$date,$userId)
     {
         $reserve = $date .' '. $time . ':00:00';
