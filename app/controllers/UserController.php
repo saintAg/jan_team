@@ -14,7 +14,8 @@ class UserController extends AbstractController
 	private UserModel $model;
 
     /**
-     *
+     * @return void
+     * Set object UserModel into $model;
      */
 	public function __construct()
 	{
@@ -25,6 +26,7 @@ class UserController extends AbstractController
 
     /**
      * @return void
+     * Call render with user_sign-in page, user;
      */
 	public function index(): void
 	{
@@ -32,12 +34,20 @@ class UserController extends AbstractController
 		$this->view->render('user_sign-in', ['user' => $user]);
 	}
 
+    /**
+     * @return void
+     * Call render with user_sign-up page, user;
+     */
 	public function registration(): void
 	{
 		$user = TemporaryStorage::check();
 		$this->view->render('user_sign-up', ['user' => $user]);
 	}
 
+    /**
+     * @return void
+     * Check input data, redirect
+     */
     public function auth(): void
     {
 		$email = filter_input(INPUT_POST, 'email');
@@ -53,6 +63,10 @@ class UserController extends AbstractController
 	    Route::redirect('/user/index');
     }
 
+    /**
+     * @return void
+     * According to e-mail, check user exists in database, if not create new user
+     */
     public function create(): void
     {
         $email = filter_input(INPUT_POST, 'email');
@@ -71,6 +85,10 @@ class UserController extends AbstractController
         Route::redirect('/index/index');
     }
 
+    /**
+     * @return void
+     * delete data from session, redirect
+     */
 	public function exit(): void
 	{
 		TemporaryStorage::dell();

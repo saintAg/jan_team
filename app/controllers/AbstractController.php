@@ -14,7 +14,7 @@ abstract class AbstractController implements controllerable
 	protected View $view;
 
     /**
-     * set object View into $view;
+     * Set object View into $view;
      */
 	public function __construct()
 	{

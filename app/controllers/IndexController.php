@@ -8,7 +8,7 @@ class IndexController extends AbstractController
 {
     /**
      * @return void
-     * call render with index_index page in $view
+     * Call render with index_index page in $view
      */
 	public function index(): void
 	{

@@ -9,8 +9,10 @@ use app\core\TemporaryStorage;
 class BookingController extends AbstractController
 {
     private BookingModel $model;
+
     /**
-     * @return mixed|void
+     * @return void
+     * Set object BookingModel into $model;
      */
     public function __construct()
     {
@@ -19,8 +21,13 @@ class BookingController extends AbstractController
         $this->model = new BookingModel();
     }
 
+    /**
+     * @return void
+     * Accept the date and display the data in the view
+     */
     public function index(): void
     {
+
         $date = filter_input(INPUT_GET,'date');
         if(empty($date)){
             $date = date("Y-m-d");
@@ -39,6 +46,10 @@ class BookingController extends AbstractController
             ]);
     }
 
+    /**
+     * @return void
+     * Get post data, set to model
+     */
     public function reserve (): void
     {
 		$hours = [];
